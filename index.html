@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/styles/index.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <div class="img">
+          <div class="img-content">
+            <div class="steps-content">
+              <span id="circule_1" class="circule" style="background-color: hsl(206, 94%, 87%);color: hsl(213, 96%, 18%);">1</span>
+              <div class="step d-none">
+                <span class="text_cool_gray fs-14">STEP 1</span>
+                <span class="text_white">YOUR INFO</span>
+              </div>
+            </div>
+            <div class="steps-content">
+              <span id="circule_2" class="circule"> 2</span>
+              <div class="step d-none">
+                <span class="text_cool_gray fs-14">STEP 2</span>
+                <span class="text_white">SELECT PLAN</span>
+              </div>
+            </div>
+            <div class="steps-content">
+              <span id="circule_3" class="circule"> 3</span>
+              <div class="step d-none">
+                <span class="text_cool_gray fs-14">STEP 3</span>
+                <span class="text_white">ADD-ONS</span>
+              </div>
+            </div>
+            <div class="steps-content">
+              <span id="circule_4" class="circule"> 4</span>
+              <div class="step d-none">
+                <span class="text_cool_gray fs-14">STEP 4</span>
+                <span class="text_white">SUMMARY</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content" id="step_1">
+          <h1 class="text_marine_blue mb-0">Personal info</h1>
+          <p class="text_cool_gray mb-25">Please provide your name, email address, and phone number.</p>
+          <div class="flex">
+            <div class="validate">
+              <label class="text_marine_blue" for="name"> Name </label>
+              <span class="validation"> this filed is required </span>
+            </div>
+            <input
+              type="text"
+              name=""
+              id="name"
+              placeholder="e.g. Stephen King"
+            />
+          </div>
+          <div class="flex mt-23">
+            <div class="validate">
+              <label class="text_marine_blue" for="email"> Email Address </label>
+              <span class="validation"> this filed is required </span>
+            </div>
+            <input
+              type="email"
+              name=""
+              id="email"
+              placeholder="e.g. stephenking@lorem.com"
+            />
+          </div>
+          <div class="flex mt-23">
+            <div class="validate">
+              <label class="text_marine_blue" for="phone"> Phone Number </label>
+              <span class="validation"> this filed is required </span>
+            </div>
+            <input
+              type="phone"
+              name=""
+              id="phone"
+              placeholder="e.g. +1 234 567 890"
+            />
+          </div>
+
+          <button class="next-btn" onclick="nextStep()" type="submit">
+            Next Step
+          </button>
+        </div>
+        <div class="content" id="step_2" style="display: none">
+          
+          <div class="ml-30">
+            <h1 class="text_marine_blue">Select your plan</h1>
+            <p class="text_cool_gray">You have the option of monthly or yearly billing.</p>
+          </div>
+
+          <div>
+            <div class="cards" id="monthly_cards">
+              <div class="card">
+                <img src="./assets/images/icon-arcade.svg" alt="arcade" />
+                <div> 
+                  <h3 class="text_marine_blue fs-14">Arcade</h3>
+                  <span class="text_cool_gray fs-12 "> $9/mo </span>
+                </div>
+              </div>
+              <div class="card">
+                <img src="./assets/images/icon-advanced.svg" alt="arcade" />
+                <div> 
+                  <h3 class="text_marine_blue fs-14">Advanced</h3>
+                  <span class="text_cool_gray fs-12 "> $12/mo </span>
+                </div>
+              </div>
+              <div class="card">
+                <img src="./assets/images/icon-pro.svg" alt="arcade" />
+                <div> 
+                  <h3 class="text_marine_blue fs-14">Pro</h3>
+                <span class="text_cool_gray fs-12 "> $15/mo </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="cards" id="yearly_cards" style="display: none">
+              <div class="card">
+                <img src="./assets/images/icon-arcade.svg" alt="arcade" />
+                <h3>Arcade</h3>
+                <span> $90/mo </span>
+                <span>2 months free</span>
+              </div>
+              <div class="card">
+                <img src="./assets/images/icon-advanced.svg" alt="arcade" />
+                <h3>Advanced</h3>
+                <span> $120/mo </span>
+                <span>2 months free</span>
+              </div>
+              <div class="card">
+                <img src="./assets/images/icon-pro.svg" alt="arcade" />
+                <h3>Pro</h3>
+                <span> $150/mo </span>
+                <span>2 months free</span>
+              </div>
+            </div>
+            <div class="toggle-card">
+              <span class="month"> Monthly </span>
+              <label class="switch">
+                <input type="checkbox" onchange="toggleCards()" />
+                <span class="slider round"></span>
+              </label>
+              <span class="year"> Yearly </span>
+            </div>
+          </div>
+
+          <div class="btns mt-0"> 
+            <button class="next-btn mt-0" onclick="nextStep()" type="submit">
+              Next Step
+            </button>
+  
+            <button class="back-btn text_cool_gray" type="submit" onclick="previousStep()">Go Back</button>
+          </div>
+          
+        </div>
+
+        <div class="content" id="step_3" style="display: none">
+          <div>
+            <h1>Pick add-ons</h1>
+            <p>Add-ons help enhance your gaming experience.</p>
+          </div>
+          <div class="step_3_content">
+            <div class="d-flex">
+              <input type="checkbox" id="add_1" name=" " value=" " />
+              <div class="step_3_card_content">
+                <span> Online service</span>
+                <span> Access to multiplayer games </span>
+              </div>
+            </div>
+            <div>
+              <span> +$1/mo </span>
+            </div>
+          </div>
+          <div class="step_3_content mt-15 mb-15">
+            <div class="d-flex">
+              <input type="checkbox" id="add_2" name=" " value=" " />
+              <div class="step_3_card_content">
+                <span> Large storage</span>
+                <span> Extra 1TB of cloud save </span>
+              </div>
+            </div>
+            <div>
+              <span> +$2/mo </span>
+            </div>
+          </div>
+          <div class="step_3_content">
+            <div class="d-flex">
+              <input type="checkbox" id="add_3" name=" " value=" " />
+              <div class="step_3_card_content">
+                <span> Customizable Profile</span>
+                <span> Custom theme on profile</span>
+              </div>
+            </div>
+            <div>
+              <span> +$1/mo </span>
+            </div>
+          </div>
+          <div class="btns">
+            <button class="next-btn mt-0" onclick="nextStep()" type="submit">
+              Next Step
+            </button>
+            <button type="submit" onclick="previousStep()">Go Back</button>
+          </div>
+        </div>
+
+        <div class="content" id="step_4" style="display: none">
+          <div>
+            <h1>Finishing up</h1>
+            <p>Double-check everything looks OK before confirming.</p>
+          </div>
+          <div class="step_4_card">
+            <div class="step_4_content"> 
+              <div class="arcade">
+                <span>
+                  Arcade(Monthly)
+                </span>
+                <a href="">Change</a>
+              </div>
+            <span> $9/mo </span>
+            </div>
+            <div class="services"> 
+              <span> 
+              Online service  
+              </span>
+              <span> 
+                $1/mo
+              </span>
+            </div>
+            <div class="services"> 
+              <span> 
+              Large stotage
+              </span>
+              <span> 
+                $2/mo
+              </span>
+            </div>
+          </div>
+          <div class="services"> 
+            <span> 
+            Total(per month)
+            </span>
+            <span> 
+              $2/mo
+            </span>
+          </div>
+          <div class="btns">
+            <button class="next-btn mt-0" onclick="nextStep()" type="submit">
+              Confirm
+            </button>
+            <button type="submit" onclick="previousStep()">Go Back</button>
+          </div>
+        </div>
+
+        <div class="content" id="step_5" style="display: none">
+        
+          <div> 
+            <img src="./assets/images/icon-thank-you.svg" alt="">
+          </div>
+
+          <h3> 
+          Thank you!
+          </h3>
+          <p> 
+            Thanks for confirming your subscription! We hope you have fun 
+            using our platform. If you ever need support, please feel free 
+            to email us at support@loremgaming.com.
+          </p>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
