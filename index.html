@@ -43,13 +43,14 @@
         </div>
         <div class="content" id="step_1">
           <h1 class="text_marine_blue mb-0">Personal info</h1>
-          <p class="text_cool_gray mb-25">Please provide your name, email address, and phone number.</p>
+          <p class="text_cool_gray mb-25 max-w-243">Please provide your name, email address, and phone number.</p>
           <div class="flex">
             <div class="validate">
               <label class="text_marine_blue" for="name"> Name </label>
               <span class="validation"> this filed is required </span>
             </div>
             <input
+            class="step_1_input"
               type="text"
               name=""
               id="name"
@@ -62,6 +63,7 @@
               <span class="validation"> this filed is required </span>
             </div>
             <input
+            class="step_1_input"
               type="email"
               name=""
               id="email"
@@ -74,6 +76,7 @@
               <span class="validation"> this filed is required </span>
             </div>
             <input
+            class="step_1_input"
               type="phone"
               name=""
               id="phone"
@@ -87,28 +90,28 @@
         </div>
         <div class="content" id="step_2" style="display: none">
           
-          <div class="ml-30">
-            <h1 class="text_marine_blue">Select your plan</h1>
-            <p class="text_cool_gray">You have the option of monthly or yearly billing.</p>
+          <div class="ml-md-30 ml-sm-0">
+            <h1 class="text_marine_blue mb-0">Select your plan</h1>
+            <p class="text_cool_gray mt-10 mb-30">You have the option of monthly or yearly billing.</p>
           </div>
 
           <div>
             <div class="cards" id="monthly_cards">
-              <div class="card">
+              <div class="card border-blue">
                 <img src="./assets/images/icon-arcade.svg" alt="arcade" />
                 <div> 
                   <h3 class="text_marine_blue fs-14">Arcade</h3>
-                  <span class="text_cool_gray fs-12 "> $9/mo </span>
+                  <span class="text_cool_gray fs-12"> $9/mo </span>
                 </div>
               </div>
-              <div class="card">
+              <div class="card border-light-grey">
                 <img src="./assets/images/icon-advanced.svg" alt="arcade" />
                 <div> 
                   <h3 class="text_marine_blue fs-14">Advanced</h3>
                   <span class="text_cool_gray fs-12 "> $12/mo </span>
                 </div>
               </div>
-              <div class="card">
+              <div class="card border-light-grey">
                 <img src="./assets/images/icon-pro.svg" alt="arcade" />
                 <div> 
                   <h3 class="text_marine_blue fs-14">Pro</h3>
@@ -118,142 +121,186 @@
             </div>
 
             <div class="cards" id="yearly_cards" style="display: none">
-              <div class="card">
+              <div class="card border-blue min-height-175 min-md-height-70">
                 <img src="./assets/images/icon-arcade.svg" alt="arcade" />
-                <h3>Arcade</h3>
-                <span> $90/mo </span>
-                <span>2 months free</span>
+                <div> 
+                  <h3 class="text_marine_blue fs-14">Arcade</h3>
+                  <span class="text_cool_gray fs-12"> $90/mo </span>
+                  <span class="text_marine_blue fs-12">2 months free</span>
+                </div>
+               
               </div>
-              <div class="card">
+              <div class="card border-light-grey min-height-175 min-md-height-70">
                 <img src="./assets/images/icon-advanced.svg" alt="arcade" />
-                <h3>Advanced</h3>
-                <span> $120/mo </span>
-                <span>2 months free</span>
+                <div> 
+                  <h3 class="text_marine_blue fs-14">Advanced</h3>
+                  <span class="text_cool_gray fs-12"> $120/mo </span>
+                  <span class="text_marine_blue fs-12">2 months free</span>
+                </div>
+              
               </div>
-              <div class="card">
+              <div class="card border-light-grey min-height-175 min-md-height-70">
                 <img src="./assets/images/icon-pro.svg" alt="arcade" />
-                <h3>Pro</h3>
-                <span> $150/mo </span>
-                <span>2 months free</span>
+                <div> 
+                  <h3 class="text_marine_blue fs-14">Pro</h3>
+                <span class="text_cool_gray fs-12"> $150/mo </span>
+                <span class="text_marine_blue fs-12">2 months free</span>
+                </div>
               </div>
             </div>
             <div class="toggle-card">
-              <span class="month"> Monthly </span>
+              <span class="text_marine_blue fw-600 month"> Monthly </span>
               <label class="switch">
                 <input type="checkbox" onchange="toggleCards()" />
                 <span class="slider round"></span>
               </label>
-              <span class="year"> Yearly </span>
+              <span class="text_cool_gray fw-600 year"> Yearly </span>
             </div>
           </div>
 
-          <div class="btns mt-0"> 
+          <div class="btns"> 
             <button class="next-btn mt-0" onclick="nextStep()" type="submit">
               Next Step
             </button>
-  
             <button class="back-btn text_cool_gray" type="submit" onclick="previousStep()">Go Back</button>
           </div>
-          
         </div>
-
         <div class="content" id="step_3" style="display: none">
           <div>
-            <h1>Pick add-ons</h1>
-            <p>Add-ons help enhance your gaming experience.</p>
+            <h1 class="text_marine_blue mb-0">Pick add-ons</h1>
+            <p class="text_cool_gray mt-10 mb-30">Add-ons help enhance your gaming experience.</p>
           </div>
-          <div class="step_3_content">
-            <div class="d-flex">
-              <input type="checkbox" id="add_1" name=" " value=" " />
-              <div class="step_3_card_content">
-                <span> Online service</span>
-                <span> Access to multiplayer games </span>
+          <div id="step_3_monthly"> 
+            <div class="step_3_content">
+              <div class="d-flex">
+                <input type="checkbox" id="add_1" name=" " value=" " />
+                <div class="step_3_card_content">
+                  <span class="text_marine_blue fs-18 fs-sm-14"> Online service</span>
+                  <span class="text_cool_gray lh-1_5 fs-sm-12"> Access to multiplayer games </span>
+                </div>
+              </div>
+              <div>
+                <span class="text_purplish_blue fs-sm-12"> +$1/mo </span>
               </div>
             </div>
-            <div>
-              <span> +$1/mo </span>
-            </div>
-          </div>
-          <div class="step_3_content mt-15 mb-15">
-            <div class="d-flex">
-              <input type="checkbox" id="add_2" name=" " value=" " />
-              <div class="step_3_card_content">
-                <span> Large storage</span>
-                <span> Extra 1TB of cloud save </span>
+            <div class="step_3_content mt-15 mb-15">
+              <div class="d-flex">
+                <input class="m-0 w-20" type="checkbox" id="add_2" name=" " value=" " />
+                <div class="step_3_card_content">
+                  <span class="text_marine_blue fs-18 fs-sm-14"> Large storage</span>
+                  <span class="text_cool_gray lh-1_5 fs-sm-12"> Extra 1TB of cloud save </span>
+                </div>
+              </div>
+              <div>
+                <span class="text_purplish_blue fs-sm-12"> +$2/mo </span>
               </div>
             </div>
-            <div>
-              <span> +$2/mo </span>
-            </div>
-          </div>
-          <div class="step_3_content">
-            <div class="d-flex">
-              <input type="checkbox" id="add_3" name=" " value=" " />
-              <div class="step_3_card_content">
-                <span> Customizable Profile</span>
-                <span> Custom theme on profile</span>
+            <div class="step_3_content">
+              <div class="d-flex">
+                <input class="m-0 w-20" type="checkbox" id="add_3" name=" " value=" " />
+                <div class="step_3_card_content">
+                  <span class="text_marine_blue fs-18 fs-sm-14"> Customizable Profile</span>
+                  <span class="text_cool_gray lh-1_5 fs-sm-12"> Custom theme on profile</span>
+                </div>
+              </div>
+              <div>
+                <span class="text_purplish_blue fs-sm-12"> +$1/mo </span>
               </div>
             </div>
-            <div>
-              <span> +$1/mo </span>
+          </div>
+
+          <div id="step_3_yearly" style="display: none"> 
+            <div class="step_3_content">
+              <div class="d-flex">
+                <input type="checkbox" id="add_1" name=" " value=" " />
+                <div class="step_3_card_content">
+                  <span class="text_marine_blue fs-18 fs-sm-14"> Online service</span>
+                  <span class="text_cool_gray lh-1_5 fs-sm-12"> Access to multiplayer games </span>
+                </div>
+              </div>
+              <div>
+                <span class="text_purplish_blue fs-sm-12"> +$10/mo </span>
+              </div>
+            </div>
+            <div class="step_3_content mt-15 mb-15">
+              <div class="d-flex">
+                <input type="checkbox" id="add_2" name=" " value=" " />
+                <div class="step_3_card_content">
+                  <span class="text_marine_blue fs-18 fs-sm-14"> Large storage</span>
+                  <span class="text_cool_gray lh-1_5 fs-sm-12"> Extra 1TB of cloud save </span>
+                </div>
+              </div>
+              <div>
+                <span class="text_purplish_blue fs-sm-12"> +$20/mo </span>
+              </div>
+            </div>
+            <div class="step_3_content">
+              <div class="d-flex">
+                <input type="checkbox" id="add_3" name=" " value=" " />
+                <div class="step_3_card_content">
+                  <span class="text_marine_blue fs-18 fs-sm-14"> Customizable Profile</span>
+                  <span class="text_cool_gray lh-1_5  fs-sm-12"> Custom theme on profile</span>
+                </div>
+              </div>
+              <div>
+                <span class="text_purplish_blue fs-sm-12"> +$10/mo </span>
+              </div>
             </div>
           </div>
           <div class="btns">
             <button class="next-btn mt-0" onclick="nextStep()" type="submit">
               Next Step
             </button>
-            <button type="submit" onclick="previousStep()">Go Back</button>
+            <button class="back-btn" type="submit" onclick="previousStep()">Go Back</button>
           </div>
         </div>
-
         <div class="content" id="step_4" style="display: none">
           <div>
-            <h1>Finishing up</h1>
-            <p>Double-check everything looks OK before confirming.</p>
+            <h1 class="text_marine_blue mb-0">Finishing up</h1>
+            <p class="text_cool_gray mt-10 mb-30">Double-check everything looks OK before confirming.</p>
           </div>
           <div class="step_4_card">
             <div class="step_4_content"> 
               <div class="arcade">
-                <span>
+                <span class="fs-16 fw-600 text_marine_blue">
                   Arcade(Monthly)
                 </span>
-                <a href="">Change</a>
+                <a class="text_cool_gray mt-5" href="#" onclick="doublePreviousStep()">Change</a>
               </div>
-            <span> $9/mo </span>
+            <span class="fs-16 fw-600 text_marine_blue"> $9/mo </span>
             </div>
             <div class="services"> 
-              <span> 
+              <span class="text_cool_gray"> 
               Online service  
               </span>
-              <span> 
+              <span class="text_marine_blue fs-16"> 
                 $1/mo
               </span>
             </div>
             <div class="services"> 
-              <span> 
+              <span class="text_cool_gray"> 
               Large stotage
               </span>
-              <span> 
+              <span class="fs-16 text_marine_blue"> 
                 $2/mo
               </span>
             </div>
           </div>
-          <div class="services"> 
-            <span> 
+          <div class="services ml-20"> 
+            <span class="text_cool_gray"> 
             Total(per month)
             </span>
-            <span> 
-              $2/mo
+            <span class="fs-20 fw-600 text_purplish_blue"> 
+              $12/mo
             </span>
           </div>
           <div class="btns">
-            <button class="next-btn mt-0" onclick="nextStep()" type="submit">
+            <button class="next-btn mt-0 bg_purplish_blue" onclick="nextStep()" type="submit">
               Confirm
             </button>
-            <button type="submit" onclick="previousStep()">Go Back</button>
+            <button class="back-btn" type="submit" onclick="previousStep()">Go Back</button>
           </div>
         </div>
-
         <div class="content" id="step_5" style="display: none">
         
           <div> 

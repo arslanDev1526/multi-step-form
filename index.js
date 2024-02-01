@@ -8,14 +8,16 @@ function showStep(stepNumber) {
 
     if (stepContent || stepCircle) {
       stepContent.style.display = i === stepNumber ? "block" : "none";
-      stepCircle.style.backgroundColor = i === stepNumber ? "red" : "";
+      stepCircle.style.backgroundColor = i === stepNumber ? "hsl(206, 94%, 87%)" : "";
+      stepCircle.style.color = i === stepNumber ? " hsl(213, 96%, 18%)" : "";
+
     }
   }
 }
 
 function nextStep() {
-  let inputs = document.getElementsByTagName("input");
-  let validation = document.getElementsByClassName("validation");
+  let inputs = document.querySelectorAll(".step_1_input");
+  let validation = document.querySelectorAll(".validation");
   let isEmpty = false;
 
   for (let i = 0; i < inputs.length; i++) {
@@ -33,8 +35,6 @@ function nextStep() {
     }
   }
  
-  console.log (isEmpty, "isempty")
-
     if (!isEmpty && currentStep < totalSteps) {
       currentStep++;
       showStep(currentStep);
@@ -48,21 +48,48 @@ function previousStep() {
   }
 }
 
+function doublePreviousStep(){ 
+  if (currentStep > 2) {
+    currentStep -= 2;
+    showStep(currentStep);
+  } 
+}
+
 function toggleCards() {
   var monthlyCards = document.getElementById("monthly_cards");
   var yearlyCards = document.getElementById("yearly_cards");
+  var stepThreeMonthly = document.getElementById("step_3_monthly");
+  var stepThreeYearly = document.getElementById("step_3_yearly");
   var month = document.querySelector(".month");
   var year = document.querySelector(".year");
 
   if (monthlyCards.style.display === "none") {
     monthlyCards.style.display = "flex";
     yearlyCards.style.display = "none";
-    month.style.color = "red";
-    year.style.color = "";
+    stepThreeMonthly.style.display = "block";
+    stepThreeYearly.style.display = "none";
+    month.style.color = "hsl(213, 96%, 18%)"
+    year.style.color = "hsl(231, 11%, 63%)";
   } else {
     monthlyCards.style.display = "none";
     yearlyCards.style.display = "flex";
-    month.style.color = "";
-    year.style.color = "green";
+    stepThreeMonthly.style.display = "none";
+    stepThreeYearly.style.display = "block";
+    month.style.color = "hsl(231, 11%, 63%)";
+    year.style.color = "hsl(213, 96%, 18%)";
   }
 }
+
+document.addEventListener("DOMContentLoaded", function(){ 
+const checkboxes = document.querySelectorAll(`input[type="checkbox"]`);
+checkboxes.forEach(function(checkbox){
+  checkbox.addEventListener("change", function (){ 
+    const container = checkbox.closest(".step_3_content");
+    if(checkbox.checked){ 
+      container.classList.add("checked");
+    } else { 
+      container.classList.remove("checked");
+    }
+  })
+})
+})
