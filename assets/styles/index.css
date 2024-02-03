@@ -13,6 +13,10 @@ html {
   background-color: hsl(217, 100%, 97%);
 }
 
+.hidden {
+  display: none;
+}
+
 button {
   font-family: "Ubuntu";
   cursor: pointer;
@@ -75,6 +79,10 @@ button {
 
 .text_purplish_blue {
   color: hsl(243, 100%, 62%);
+}
+.cards .plan input[type=radio]:checked~label {
+  background-color: hsl(217, 100%, 97%);
+  border-color: hsl(243, 100%, 62%);
 }
 
 .bg_purplish_blue {
@@ -222,6 +230,7 @@ input {
   min-height: 155px;
   width: 134px;
   border-radius: 5px;
+  display: block;
 }
 
 .card:hover {

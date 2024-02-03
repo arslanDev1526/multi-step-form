@@ -72,34 +72,45 @@
           Next Step
         </button>
       </div>
-      <div class="content" id="step_2" style="display: none">
+      <div class="content" id="step_2" style="display: none;">
         <div class="ml-md-30 ml-sm-0">
           <h1 class="text_marine_blue mb-0">Select your plan</h1>
           <p class="text_cool_gray mt-10 mb-30">You have the option of monthly or yearly billing.</p>
         </div>
         <div>
           <div class="cards" id="monthly_cards">
-            <div class="card border-blue">
-              <img src="./assets/images/icon-arcade.svg" alt="arcade" />
-              <div>
-                <h3 class="text_marine_blue fs-14">Arcade</h3>
-                <span class="text_cool_gray fs-12"> $9/mo </span>
-              </div>
+            <div class="plan"> 
+            <input type="radio" id="arcade" name="plan">
+            <label class="card border-light-grey" for="arcade">
+                <img src="./assets/images/icon-arcade.svg" alt="arcade" />
+                <div>
+                  <h3 class="text_marine_blue fs-14">Arcade</h3>
+                  <span class="text_cool_gray fs-12"> $9/mo </span>
+                </div>
+              </label>
+
             </div>
-            <div class="card border-light-grey">
-              <img src="./assets/images/icon-advanced.svg" alt="arcade" />
+           <div class="plan"> 
+            <input type="radio" name="plan" id="advanced">
+            <label class="card border-light-grey" for="advanced">
+                <img src="./assets/images/icon-advanced.svg" alt="arcade" />
               <div>
                 <h3 class="text_marine_blue fs-14">Advanced</h3>
                 <span class="text_cool_gray fs-12 "> $12/mo </span>
               </div>
-            </div>
-            <div class="card border-light-grey">
-              <img src="./assets/images/icon-pro.svg" alt="arcade" />
-              <div>
-                <h3 class="text_marine_blue fs-14">Pro</h3>
-                <span class="text_cool_gray fs-12 "> $15/mo </span>
-              </div>
-            </div>
+              </label>
+           </div>
+           <div class="plan"> 
+            <input type="radio" name="plan" id="pro">
+            <label class="card border-light-grey" for="pro">
+                <img src="./assets/images/icon-pro.svg" alt="arcade" />
+                <div>
+                  <h3 class="text_marine_blue fs-14">Pro</h3>
+                  <span class="text_cool_gray fs-12 "> $15/mo </span>
+                </div>
+            </label>
+           </div>
+           
           </div>
           <div class="cards" id="yearly_cards" style="display: none">
             <div class="card border-blue min-height-175 min-md-height-70">
@@ -247,7 +258,7 @@
               </span>
               <a class="text_cool_gray mt-5" href="#" onclick="doublePreviousStep()">Change</a>
             </div>
-            <span id="monthly_value" class="fs-16 fw-600 text_marine_blue"> $9/mo </span>
+            <span id="monthly_value" class="fs-16 fw-600 text_marine_blue"></span>
           </div>
           <div class="services input_1_render" style="display: none;">
             <span class="text_cool_gray">
@@ -276,7 +287,7 @@
           </div>
         </div>
 
-        <div class="step_4_card_yearly" style="display: none;">
+        <div class="step_4_card step_4_card_yearly" style="display: none;">
           <div class="step_4_content">
             <div class="arcade">
               <span class="fs-16 fw-600 text_marine_blue">
@@ -323,7 +334,7 @@
           <span id="total_monthly" class="text_cool_gray">
             Total(per year)
           </span>
-          <span id="sumResult" class="fs-20 fw-600 text_purplish_blue">
+          <span id="sumResultYear" class="fs-20 fw-600 text_purplish_blue">
           </span>
         </div>
         <div class="btns">
