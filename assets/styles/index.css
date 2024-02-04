@@ -80,6 +80,11 @@ button {
 .text_purplish_blue {
   color: hsl(243, 100%, 62%);
 }
+
+/* - Strawberry red: hsl(354, 84%, 57%) */
+.text_red { 
+  color: hsl(354, 84%, 57%) ;
+}
 .cards .plan input[type=radio]:checked~label {
   background-color: hsl(217, 100%, 97%);
   border-color: hsl(243, 100%, 62%);
@@ -94,8 +99,9 @@ input::placeholder {
   font-weight: 600;
 }
 
-input:focus {
-  border: solid hsl(243, 100%, 62%) 1px;
+.step_1_input:focus,
+.step_1_input:active {
+  border-color: red !important;
 }
 
 .mb-0 {
@@ -206,10 +212,10 @@ input {
   border-radius: 7px;
 }
 
-.validation {
+/* .validation {
   display: none;
   color: hsl(354, 84%, 57%);
-}
+} */
 
 .validate {
   display: flex;
@@ -441,6 +447,10 @@ input:checked + .slider:before {
 
 .min-height-175 {
   min-height: 175px;
+}
+
+.d_none {
+  display: none;
 }
 
 @media (min-width: 427px) {

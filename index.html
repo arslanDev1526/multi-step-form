@@ -50,21 +50,26 @@
         <div class="flex">
           <div class="validate">
             <label class="text_marine_blue" for="name"> Name </label>
-            <span class="validation"> this filed is required </span>
+            <span  style="display: none;" class="text_red" id="name_validation"> This filed is required </span>
+            <span style="display: none;" class="text_red" id="name_validation_2"> Invalid name </span>
+
           </div>
           <input class="step_1_input" type="text" name="" id="name" placeholder="e.g. Stephen King" />
         </div>
         <div class="flex mt-23">
           <div class="validate">
             <label class="text_marine_blue" for="email"> Email Address </label>
-            <span class="validation"> this filed is required </span>
+            <span style="display: none;" class="text_red" id="email_validation"> This filed is required </span>
+            <span style="display: none;" class="text_red" id="email_validation_2"> Invalid email </span>
+
           </div>
           <input class="step_1_input" type="email" name="" id="email" placeholder="e.g. stephenking@lorem.com" />
         </div>
         <div class="flex mt-23">
           <div class="validate">
             <label class="text_marine_blue" for="phone"> Phone Number </label>
-            <span class="validation"> this filed is required </span>
+            <span style="display: none;" class="text_red" id="phone_validation"> This filed is required </span>
+            <span style="display: none;" class="text_red" id="phone_validation_2"> Invalid phone numer </span>
           </div>
           <input class="step_1_input" type="phone" name="" id="phone" placeholder="e.g. +1 234 567 890" />
         </div>
@@ -80,7 +85,7 @@
         <div>
           <div class="cards" id="monthly_cards">
             <div class="plan"> 
-            <input type="radio" id="arcade" name="plan">
+            <input class="d_none" type="radio" id="arcade" name="plan">
             <label class="card border-light-grey" for="arcade">
                 <img src="./assets/images/icon-arcade.svg" alt="arcade" />
                 <div>
@@ -88,10 +93,9 @@
                   <span class="text_cool_gray fs-12"> $9/mo </span>
                 </div>
               </label>
-
             </div>
            <div class="plan"> 
-            <input type="radio" name="plan" id="advanced">
+            <input class="d_none" type="radio" name="plan" id="advanced">
             <label class="card border-light-grey" for="advanced">
                 <img src="./assets/images/icon-advanced.svg" alt="arcade" />
               <div>
@@ -101,7 +105,7 @@
               </label>
            </div>
            <div class="plan"> 
-            <input type="radio" name="plan" id="pro">
+            <input class="d_none" type="radio" name="plan" id="pro">
             <label class="card border-light-grey" for="pro">
                 <img src="./assets/images/icon-pro.svg" alt="arcade" />
                 <div>
@@ -110,33 +114,42 @@
                 </div>
             </label>
            </div>
-           
           </div>
           <div class="cards" id="yearly_cards" style="display: none">
-            <div class="card border-blue min-height-175 min-md-height-70">
-              <img src="./assets/images/icon-arcade.svg" alt="arcade" />
-              <div>
-                <h3 class="text_marine_blue fs-14">Arcade</h3>
-                <span class="text_cool_gray fs-12"> $90/mo </span>
-                <span class="text_marine_blue fs-12">2 months free</span>
-              </div>
+            <div class="plan">
+            <input class="d_none" type="radio" id="arcade_yearly" name="plan_yearly">
+              <label class="card border-light-grey min-height-175 min-md-height-70" for="arcade_yearly">
+                <img src="./assets/images/icon-arcade.svg" alt="arcade" />
+                <div>
+                  <h3 class="text_marine_blue fs-14">Arcade</h3>
+                  <span class="text_cool_gray fs-12"> $90/mo </span>
+                  <span class="text_marine_blue fs-12">2 months free</span>
+                </div>
+              </label>
             </div>
-            <div class="card border-light-grey min-height-175 min-md-height-70">
+           
+            <div class="plan"> 
+            <input class="d_none" type="radio" id="advanced_yearly" name="plan_yearly">
+            <label class="card border-light-grey min-height-175 min-md-height-70" for="advanced_yearly">
               <img src="./assets/images/icon-advanced.svg" alt="arcade" />
               <div>
                 <h3 class="text_marine_blue fs-14">Advanced</h3>
                 <span class="text_cool_gray fs-12"> $120/mo </span>
                 <span class="text_marine_blue fs-12">2 months free</span>
               </div>
-
+            </label>
             </div>
-            <div class="card border-light-grey min-height-175 min-md-height-70">
+
+            <div class="plan"> 
+            <input class="d_none" type="radio" id="pro_yearly" name="plan_yearly">
+            <label class="card border-light-grey min-height-175 min-md-height-70" for="pro_yearly">
               <img src="./assets/images/icon-pro.svg" alt="arcade" />
               <div>
                 <h3 class="text_marine_blue fs-14">Pro</h3>
                 <span class="text_cool_gray fs-12"> $150/mo </span>
                 <span class="text_marine_blue fs-12">2 months free</span>
               </div>
+            </label>
             </div>
           </div>
           <div class="toggle-card">
@@ -162,9 +175,12 @@
           <p class="text_cool_gray mt-10 mb-30">Add-ons help enhance your gaming experience.</p>
         </div>
         <div id="step_3_monthly">
+
+            <label for="add_1">
           <div class="step_3_content">
             <div class="d-flex">
-              <input type="checkbox" id="add_1" name=" " value=" " />
+              <input type="checkbox" id="add_1" name="step_3_content"/>
+             
               <div class="step_3_card_content">
                 <span class="text_marine_blue fs-18 fs-sm-14"> Online service</span>
                 <span class="text_cool_gray lh-1_5 fs-sm-12"> Access to multiplayer games </span>
@@ -174,6 +190,9 @@
               <span class="text_purplish_blue fs-sm-12"> +$1/mo </span>
             </div>
           </div>
+        </label>
+
+        <label for="add_2"> 
           <div class="step_3_content mt-15 mb-15">
             <div class="d-flex">
               <input class="m-0 w-20" type="checkbox" id="add_2" name=" " value=" " />
@@ -186,6 +205,9 @@
               <span class="text_purplish_blue fs-sm-12"> +$2/mo </span>
             </div>
           </div>
+        </label>
+
+        <label for="add_3">
           <div class="step_3_content">
             <div class="d-flex">
               <input class="m-0 w-20" type="checkbox" id="add_3" name=" " value=" " />
@@ -198,6 +220,7 @@
               <span class="text_purplish_blue fs-sm-12"> +$1/mo </span>
             </div>
           </div>
+        </label>
         </div>
 
         <div id="step_3_yearly" style="display: none">
@@ -253,8 +276,8 @@
         <div class="step_4_card">
           <div class="step_4_content">
             <div class="arcade">
-              <span class="fs-16 fw-600 text_marine_blue">
-                Arcade(Monthly)
+              <span id="monthly_text" class="fs-16 fw-600 text_marine_blue">
+                <!-- Arcade(Monthly) -->
               </span>
               <a class="text_cool_gray mt-5" href="#" onclick="doublePreviousStep()">Change</a>
             </div>
@@ -276,7 +299,6 @@
               $2/mo
             </span>
           </div>
-
           <div class="services input_3_render" style="display: none;">
             <span class="text_cool_gray">
               Customizable Profile
@@ -286,16 +308,15 @@
             </span>
           </div>
         </div>
-
         <div class="step_4_card step_4_card_yearly" style="display: none;">
           <div class="step_4_content">
             <div class="arcade">
-              <span class="fs-16 fw-600 text_marine_blue">
-                Arcade(Yearly)
+              <span id="yearly_text" class="fs-16 fw-600 text_marine_blue">
+                <!-- Arcade(Yearly) -->
               </span>
               <a class="text_cool_gray mt-5" href="#" onclick="doublePreviousStep()">Change</a>
             </div>
-            <span id="yearly_value" class="fs-16 fw-600 text_marine_blue"> $90/mo </span>
+            <span id="yearly_value" class="fs-16 fw-600 text_marine_blue"> </span>
           </div>
           <div class="services input_1_year" style="display: none;">
             <span class="text_cool_gray">
@@ -330,7 +351,7 @@
           <span id="sumResult" class="fs-20 fw-600 text_purplish_blue">
           </span>
         </div>
-        <div id="total_yearly" class="services ml-20">
+        <div id="total_yearly" class="services ml-20" style="display: none;">
           <span id="total_monthly" class="text_cool_gray">
             Total(per year)
           </span>
