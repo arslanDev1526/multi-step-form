@@ -171,7 +171,7 @@ input {
 .container {
   background-color: hsl(0, 0%, 100%);
   display: flex;
-  height: 593px;
+  /* height: 593px; */
   max-width: 900px;
   width: 100%;
   border-radius: 15px;
@@ -362,11 +362,19 @@ input:checked + .slider:before {
 }
 
 .btns {
-  margin-top: 125px;
+  /* margin-top: 125px; */
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   flex-direction: row-reverse;
   justify-content: space-between;
+  background: white;
+}
+
+.content { 
+  display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* height: 73%; */
 }
 
 .mt-0 {
@@ -472,6 +480,7 @@ input:checked + .slider:before {
     max-width: 800px;
     width: 100%;
     margin: 0px;
+    height: 200px;
   }
 
   .step_5_content {
@@ -510,6 +519,7 @@ input:checked + .slider:before {
     flex-direction: column;
     background-color: hsl(217, 100%, 97%);
     margin: 0px;
+    
   }
 
   .next-btn {
@@ -555,6 +565,7 @@ input:checked + .slider:before {
 
   .cards {
     justify-content: center;
+    flex-direction: column;
   }
 
   .card h3,

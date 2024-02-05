@@ -7,7 +7,7 @@ function showStep(stepNumber) {
     const stepCircle = document.getElementById(`circule_${i}`);
 
     if (stepContent || stepCircle) {
-      stepContent.style.display = i === stepNumber ? "block" : "none";
+      stepContent.style.display = i === stepNumber ? "flex" : "none";
       if (i == 3) {
         updateSum();
         updateSumYearly();
@@ -36,6 +36,7 @@ function nextStep() {
   let emailValidation2 = document.getElementById("email_validation_2");
   let phoneValidation = document.getElementById("phone_validation");
   let phoneValidation2 = document.getElementById("phone_validation_2");
+  
 
   let isNameValid = false;
   let isEmailValid = false;
