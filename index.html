@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -45,47 +44,46 @@
         </div>
       </div>
       <div class="content" id="step_1">
-        <h1 class="text_marine_blue mb-0">Personal info</h1>
-        <p class="text_cool_gray mb-25 max-w-243">Please provide your name, email address, and phone number.</p>
-        <div class="flex">
-          <div class="validate">
-            <label class="text_marine_blue" for="name"> Name </label>
-            <span  style="display: none;" class="text_red" id="name_validation"> This filed is required </span>
-            <span style="display: none;" class="text_red" id="name_validation_2"> Invalid name </span>
-
+        <div class="cards-wrapper"> 
+          <h1 class="text_marine_blue mb-0">Personal info</h1>
+          <p class="text_cool_gray mb-25 max-w-243">Please provide your name, email address, and phone number.</p>
+          <div class="flex">
+            <div class="validate">
+              <label class="text_marine_blue" for="name"> Name </label>
+              <span  style="display: none;" class="text_red" id="name_validation"> This filed is required </span>
+              <span style="display: none;" class="text_red" id="name_validation_2"> Invalid name </span>
+            </div>
+            <input class="step_1_input" type="text" name="" id="name" placeholder="e.g. Stephen King" />
           </div>
-          <input class="step_1_input" type="text" name="" id="name" placeholder="e.g. Stephen King" />
-        </div>
-        <div class="flex mt-23">
-          <div class="validate">
-            <label class="text_marine_blue" for="email"> Email Address </label>
-            <span style="display: none;" class="text_red" id="email_validation"> This filed is required </span>
-            <span style="display: none;" class="text_red" id="email_validation_2"> Invalid email </span>
-
+          <div class="flex mt-23">
+            <div class="validate">
+              <label class="text_marine_blue" for="email"> Email Address </label>
+              <span style="display: none;" class="text_red" id="email_validation"> This filed is required </span>
+              <span style="display: none;" class="text_red" id="email_validation_2"> Invalid email </span>
+            </div>
+            <input class="step_1_input" type="email" name="" id="email" placeholder="e.g. stephenking@lorem.com" />
           </div>
-          <input class="step_1_input" type="email" name="" id="email" placeholder="e.g. stephenking@lorem.com" />
-        </div>
-        <div class="flex mt-23">
-          <div class="validate">
-            <label class="text_marine_blue" for="phone"> Phone Number </label>
-            <span style="display: none;" class="text_red" id="phone_validation"> This filed is required </span>
-            <span style="display: none;" class="text_red" id="phone_validation_2"> Invalid phone numer </span>
+          <div class="flex mt-23">
+            <div class="validate">
+              <label class="text_marine_blue" for="phone"> Phone Number </label>
+              <span style="display: none;" class="text_red" id="phone_validation"> This filed is required </span>
+              <span style="display: none;" class="text_red" id="phone_validation_2"> Invalid phone numer </span>
+            </div>
+            <input class="step_1_input" type="phone" name="" id="phone" placeholder="e.g. +1 234 567 890" />
           </div>
-          <input class="step_1_input" type="phone" name="" id="phone" placeholder="e.g. +1 234 567 890" />
         </div>
+      <div class="btns"> 
         <button class="next-btn" onclick="nextStep()" type="submit">
           Next Step
         </button>
       </div>
+      </div>
       <div class="content" id="step_2" style="display: none;">
-        <div class=""> 
-
         <div class="cards-wrapper"> 
         <div class="ml-md-30 ml-sm-0">
           <h1 class="text_marine_blue mb-0">Select your plan</h1>
           <p class="text_cool_gray mt-10 mb-30">You have the option of monthly or yearly billing.</p>
         </div>
-        <div >
           <div class="cards" id="monthly_cards">
             <div class="plan"> 
             <input class="d_none" type="radio" id="arcade" name="plan">
@@ -163,24 +161,21 @@
             </label>
             <span class="text_cool_gray fw-600 year"> Yearly </span>
           </div>
-        </div>
       </div>
       <div class="btns">
         <button class="next-btn mt-0" onclick="nextStep()" type="submit">
           Next Step
         </button>
-        <button class="back-btn text_cool_gray" type="submit" onclick="previousStep()">Go Back</button>
+        <button class="back-btn" type="submit" onclick="previousStep()">Go Back</button>
       </div>
     </div>
-
-    </div>
       <div class="content" id="step_3" style="display: none">
-        <div>
-          <h1 class="text_marine_blue mb-0">Pick add-ons</h1>
-          <p class="text_cool_gray mt-10 mb-30">Add-ons help enhance your gaming experience.</p>
-        </div>
+        <div class="cards-wrapper"> 
         <div id="step_3_monthly">
-
+          <div>
+            <h1 class="text_marine_blue mb-0 mt-0">Pick add-ons</h1>
+            <p class="text_cool_gray mt-10 mb-30">Add-ons help enhance your gaming experience.</p>
+          </div>
             <label for="add_1">
           <div class="step_3_content">
             <div class="d-flex">
@@ -229,6 +224,10 @@
         </div>
 
         <div id="step_3_yearly" style="display: none">
+          <div>
+            <h1 class="text_marine_blue mb-0 mt-0">Pick add-ons</h1>
+            <p class="text_cool_gray mt-10 mb-30">Add-ons help enhance your gaming experience.</p>
+          </div>
           <div class="step_3_content">
             <div class="d-flex">
               <input type="checkbox" id="add_yearly_1" name=" " value=" " />
@@ -266,6 +265,7 @@
             </div>
           </div>
         </div>
+      </div>
         <div class="btns">
           <button class="next-btn mt-0" onclick="nextStep()" type="submit">
             Next Step
@@ -274,95 +274,96 @@
         </div>
       </div>
       <div class="content" id="step_4" style="display: none">
-        <div>
-          <h1 class="text_marine_blue mb-0">Finishing up</h1>
-          <p class="text_cool_gray mt-10 mb-30">Double-check everything looks OK before confirming.</p>
-        </div>
-        <div class="step_4_card">
-          <div class="step_4_content">
-            <div class="arcade">
-              <span id="monthly_text" class="fs-16 fw-600 text_marine_blue">
-                <!-- Arcade(Monthly) -->
-              </span>
-              <a class="text_cool_gray mt-5" href="#" onclick="doublePreviousStep()">Change</a>
+        <div class="cards-wrapper">
+          <div>
+            <h1 class="text_marine_blue mb-0">Finishing up</h1>
+            <p class="text_cool_gray mt-10 mb-30">Double-check everything looks OK before confirming.</p>
+          </div>
+          <div class="step_4_card">
+            <div class="step_4_content">
+              <div class="arcade">
+                <span id="monthly_text" class="fs-16 fw-600 text_marine_blue">
+                </span>
+                <a class="text_cool_gray mt-5" href="#" onclick="doublePreviousStep()">Change</a>
+              </div>
+              <span id="monthly_value" class="fs-16 fw-600 text_marine_blue"></span>
             </div>
-            <span id="monthly_value" class="fs-16 fw-600 text_marine_blue"></span>
-          </div>
-          <div class="services input_1_render" style="display: none;">
-            <span class="text_cool_gray">
-              Online service
-            </span>
-            <span id="input_1_value" class="text_marine_blue fs-16">
-              $1/mo
-            </span>
-          </div>
-          <div class="services input_2_render" style="display: none;">
-            <span class="text_cool_gray">
-              Large stotage
-            </span>
-            <span id="input_2_value" class="fs-16 text_marine_blue">
-              $2/mo
-            </span>
-          </div>
-          <div class="services input_3_render" style="display: none;">
-            <span class="text_cool_gray">
-              Customizable Profile
-            </span>
-            <span id="input_3_value" class="fs-16 text_marine_blue">
-              $1/mo
-            </span>
-          </div>
-        </div>
-        <div class="step_4_card step_4_card_yearly" style="display: none;">
-          <div class="step_4_content">
-            <div class="arcade">
-              <span id="yearly_text" class="fs-16 fw-600 text_marine_blue">
-                <!-- Arcade(Yearly) -->
+            <div class="services input_1_render" style="display: none;">
+              <span class="text_cool_gray">
+                Online service
               </span>
-              <a class="text_cool_gray mt-5" href="#" onclick="doublePreviousStep()">Change</a>
+              <span id="input_1_value" class="text_marine_blue fs-16">
+                $1/mo
+              </span>
             </div>
-            <span id="yearly_value" class="fs-16 fw-600 text_marine_blue"> </span>
+            <div class="services input_2_render" style="display: none;">
+              <span class="text_cool_gray">
+                Large stotage
+              </span>
+              <span id="input_2_value" class="fs-16 text_marine_blue">
+                $2/mo
+              </span>
+            </div>
+            <div class="services input_3_render" style="display: none;">
+              <span class="text_cool_gray">
+                Customizable Profile
+              </span>
+              <span id="input_3_value" class="fs-16 text_marine_blue">
+                $1/mo
+              </span>
+            </div>
           </div>
-          <div class="services input_1_year" style="display: none;">
-            <span class="text_cool_gray">
-              Online service
+          <div class="step_4_card step_4_card_yearly" style="display: none;">
+            <div class="step_4_content">
+              <div class="arcade">
+                <span id="yearly_text" class="fs-16 fw-600 text_marine_blue">
+                </span>
+                <a class="text_cool_gray mt-5" href="#" onclick="doublePreviousStep()">Change</a>
+              </div>
+              <span id="yearly_value" class="fs-16 fw-600 text_marine_blue"> </span>
+            </div>
+            <div class="services input_1_year" style="display: none;">
+              <span class="text_cool_gray">
+                Online service
+              </span>
+              <span id="input_1_value_year" class="text_marine_blue fs-16">
+                $10/mo
+              </span>
+            </div>
+            <div class="services input_2_year" style="display: none;">
+              <span class="text_cool_gray">
+                Large stotage
+              </span>
+              <span id="input_2_value_year" class="fs-16 text_marine_blue">
+                $20/mo
+              </span>
+            </div>
+            <div class="services input_3_year" style="display: none;">
+              <span class="text_cool_gray">
+                Customizable Profile
+              </span>
+              <span id="input_3_value_year" class="fs-16 text_marine_blue">
+                $10/mo
+              </span>
+            </div>
+          </div>
+          <div id="total_monthly" class="services ml-20">
+            <span id="total_monthly" class="text_cool_gray">
+              Total(per month)
             </span>
-            <span id="input_1_value_year" class="text_marine_blue fs-16">
-              $10/mo
+            <span id="sumResult" class="fs-20 fw-600 text_purplish_blue">
             </span>
           </div>
-          <div class="services input_2_year" style="display: none;">
-            <span class="text_cool_gray">
-              Large stotage
+          <div id="total_yearly" class="services ml-20" style="display: none;">
+            <span id="total_monthly" class="text_cool_gray">
+              Total(per year)
             </span>
-            <span id="input_2_value_year" class="fs-16 text_marine_blue">
-              $20/mo
+            <span id="sumResultYear" class="fs-20 fw-600 text_purplish_blue">
             </span>
           </div>
 
-          <div class="services input_3_year" style="display: none;">
-            <span class="text_cool_gray">
-              Customizable Profile
-            </span>
-            <span id="input_3_value_year" class="fs-16 text_marine_blue">
-              $10/mo
-            </span>
-          </div>
         </div>
-        <div id="total_monthly" class="services ml-20">
-          <span id="total_monthly" class="text_cool_gray">
-            Total(per month)
-          </span>
-          <span id="sumResult" class="fs-20 fw-600 text_purplish_blue">
-          </span>
-        </div>
-        <div id="total_yearly" class="services ml-20" style="display: none;">
-          <span id="total_monthly" class="text_cool_gray">
-            Total(per year)
-          </span>
-          <span id="sumResultYear" class="fs-20 fw-600 text_purplish_blue">
-          </span>
-        </div>
+     
         <div class="btns">
           <button class="next-btn mt-0 bg_purplish_blue" onclick="nextStep()" type="submit">
             Confirm
@@ -371,7 +372,7 @@
         </div>
       </div>
       <div class="content" id="step_5" style="display: none">
-        <div class="step_5_content">
+        <div class="step_5_content cards-wrapper">
           <div>
             <img src="./assets/images/icon-thank-you.svg" alt="">
           </div>

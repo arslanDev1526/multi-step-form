@@ -81,7 +81,6 @@ button {
   color: hsl(243, 100%, 62%);
 }
 
-/* - Strawberry red: hsl(354, 84%, 57%) */
 .text_red { 
   color: hsl(354, 84%, 57%) ;
 }
@@ -115,22 +114,6 @@ input::placeholder {
 .mt-5 {
   margin-top: 5px;
 }
-
-/* ### Primary
-
-- Marine blue: hsl(213, 96%, 18%)
-- Purplish blue: hsl(243, 100%, 62%)
-- Pastel blue: hsl(228, 100%, 84%)
-- Light blue: hsl(206, 94%, 87%)
-- Strawberry red: hsl(354, 84%, 57%)
-
-### Neutral
-
-- Cool gray: hsl(231, 11%, 63%)
-- Light gray: hsl(229, 24%, 87%)
-- Magnolia: hsl(217, 100%, 97%)
-- Alabaster: hsl(231, 100%, 99%)
-- White: hsl(0, 0%, 100%) */
 
 p {
   font-size: 16px;
@@ -171,7 +154,7 @@ input {
 .container {
   background-color: hsl(0, 0%, 100%);
   display: flex;
-  /* height: 593px; */
+  height: 593px;
   max-width: 900px;
   width: 100%;
   border-radius: 15px;
@@ -182,7 +165,7 @@ input {
 }
 
 .content {
-  padding: 30px 0 0 60px;
+  padding: 30px 30px 0 60px;
 }
 
 .circule {
@@ -203,19 +186,15 @@ input {
 }
 
 .next-btn {
-  float: right;
-  margin-top: 114px;
+  
   padding: 12px 20px 12px 20px;
   color: white;
   background: hsl(213, 96%, 18%);
   border: none;
   border-radius: 7px;
+  float: right;
 }
 
-/* .validation {
-  display: none;
-  color: hsl(354, 84%, 57%);
-} */
 
 .validate {
   display: flex;
@@ -340,9 +319,9 @@ input:checked + .slider:before {
   cursor: pointer;
 }
 
-#step_3 {
+#step_3 , #step_4 {
   width: 100%;
-  max-width: 28rem;
+  max-width: 27.6rem;
 }
 
 .checked {
@@ -362,9 +341,7 @@ input:checked + .slider:before {
 }
 
 .btns {
-  /* margin-top: 125px; */
   display: flex;
-  /* align-items: center; */
   flex-direction: row-reverse;
   justify-content: space-between;
   background: white;
@@ -372,9 +349,9 @@ input:checked + .slider:before {
 
 .content { 
   display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    /* height: 73%; */
+  flex-direction: column;
+  justify-content: space-between;
+  height: 90%;
 }
 
 .mt-0 {
@@ -396,8 +373,6 @@ input:checked + .slider:before {
 .step_4_card {
   background-color: hsl(217, 100%, 97%);
   padding: 20px;
-  width: 100%;
-  max-width: 500px;
   border-radius: 10px;
 }
 
@@ -473,6 +448,39 @@ input:checked + .slider:before {
 }
 
 @media (max-width: 800px) {
+
+  .step_5_content p {
+    max-width: 295px;
+  }
+
+  #step_4 h1 { 
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  .fs-sm-14 {
+    font-size: 14px;
+  }
+
+  .fs-sm-12 {
+    font-size: 12px;
+  }
+
+  .cards-wrapper { 
+    padding: 25px;
+  }
+
+  .btns { 
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+  }
+
+  .plan { 
+    align-self: center;
+    max-width: 300px;
+    width: 100%;
+  }
+
   .img {
     background-image: url("../images/bg-sidebar-mobile.svg");
     background-repeat: no-repeat;
@@ -488,20 +496,16 @@ input:checked + .slider:before {
     padding: 70px 0 70px 0;
   }
 
-  .step_4_card {
-    max-width: 308px;
-  }
-
   .step_5_content img {
     width: 70px;
   }
 
-  #step_3 {
+  #step_3 , #step_4 {
     max-width: 346px;
   }
 
   .ml-md-30 {
-    margin-left: 30px;
+    margin-left: 26px;
   }
 
   .min-md-height-70 {
@@ -515,15 +519,20 @@ input:checked + .slider:before {
   .bg-white {
     background-color: white;
   }
+
   .container {
     flex-direction: column;
     background-color: hsl(217, 100%, 97%);
     margin: 0px;
-    
+    height: 100vh;
   }
 
   .next-btn {
-    margin: 30px 0 30px 0;
+    margin: 30px 10px 30px 0;
+  }
+
+  .back-btn { 
+    margin-left: 5px;
   }
 
   .wrapper {
@@ -546,12 +555,21 @@ input:checked + .slider:before {
     max-width: 346px;
     margin: auto;
     width: 100%;
-    background: white;
-    padding: 0px 30px 0 30px;
+    padding: 0;
     position: relative;
-    bottom: 81px;
     border-radius: 12px;
+    z-index: 2;
+    height: 100vh;
+
   }
+
+  .cards-wrapper { 
+    position: relative;
+    background-color: white;
+    bottom: 67px;
+    border-radius: 18px;
+  }
+
   .card {
     display: flex;
     align-items: start;
@@ -588,6 +606,12 @@ input:checked + .slider:before {
     font-weight: 700;
   }
 
+  #step_3 h1 {
+    margin-bottom: 0px;
+    font-size: 22px;
+    font-weight: 700;
+  }
+
   #step_2 p {
     font-size: 14px;
     max-width: 217px;
@@ -603,14 +627,19 @@ input:checked + .slider:before {
 
 @media (max-width: 950px) and (min-width: 701px) {
   .container {
-    margin: 0px 0px 0px 00px;
+    margin: 0px 20px 0px 20px;
   }
   .content {
-    padding: 30px 30px 0 30px;
+    padding: 30px 0px 0 20px;
   }
 }
 
 @media (max-width: 425px) and (min-width: 375px) {
+
+  .content{ 
+    padding: 0;
+  }
+
   .fs-sm-14 {
     font-size: 14px;
   }
@@ -620,27 +649,22 @@ input:checked + .slider:before {
   }
 
   .content {
-    max-width: 285px;
-  }
-
-  .step_4_card {
-    max-width: 250px;
-  }
-
-  #step_3 {
-    max-width: 285px;
+    max-width: 348px;
   }
 
   .max-w-243 {
     max-width: 243px;
   }
 
-  .ml-sm-0 {
-    margin-left: 0px;
+  .cards-wrapper { 
+    bottom: 81px;
   }
 }
 
 @media (max-width: 374px) and (min-width: 320px) {
+  .cards-wrapper { 
+    bottom: 81px;
+  }
   .fs-sm-14 {
     font-size: 14px;
   }
@@ -650,22 +674,23 @@ input:checked + .slider:before {
   }
 
   .content {
-    max-width: 242px;
+    max-width: 292px;
   }
 
-  #step_3 {
-    max-width: 242px;
-  }
-
-  .step_4_card {
-    max-width: 210px;
+  #step_3 , #step_4 {
+    max-width: 292px;
   }
 
   .max-w-243 {
     max-width: 243px;
   }
 
-  .ml-sm-0 {
-    margin-left: 0px;
+  .plan { 
+    max-width: 244px;
+    margin-right: 16px;
+  }
+
+  .toggle-card { 
+    max-width: 263px;
   }
 }

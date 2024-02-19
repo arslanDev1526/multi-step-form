@@ -29,14 +29,12 @@ function nextStep() {
   let email = document.getElementById("email");
   let phone = document.getElementById("phone");
 
-
   let nameValidation = document.getElementById("name_validation");
   let nameValidation2 = document.getElementById("name_validation_2");
   let emailValidation = document.getElementById("email_validation");
   let emailValidation2 = document.getElementById("email_validation_2");
   let phoneValidation = document.getElementById("phone_validation");
   let phoneValidation2 = document.getElementById("phone_validation_2");
-  
 
   let isNameValid = false;
   let isEmailValid = false;
@@ -46,30 +44,30 @@ function nextStep() {
     nameValidation.style.display = "block";
     nameValidation2.style.display = "none";
     isNameValid = true;
-  } else { 
-    let nameRegex = /^[A-Za-z\s]+$/; 
+  } else {
+    let nameRegex = /^[A-Za-z\s]+$/;
     if (!nameRegex.test(name.value)) {
       nameValidation.style.display = "none";
       nameValidation2.style.display = "block";
       isNameValid = true;
-    } else { 
+    } else {
       nameValidation.style.display = "none";
       nameValidation2.style.display = "none";
       isNameValid = false;
     }
   }
 
-   if (email.value.trim() === "") {
+  if (email.value.trim() === "") {
     emailValidation.style.display = "block";
     emailValidation2.style.display = "none";
     isEmailValid = true;
-  } else { 
-    let emailRegex =  /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  } else {
+    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email.value)) {
       emailValidation.style.display = "none";
       emailValidation2.style.display = "block";
       isEmailValid = true;
-    } else { 
+    } else {
       emailValidation.style.display = "none";
       emailValidation2.style.display = "none";
       isEmpty = false;
@@ -80,20 +78,25 @@ function nextStep() {
     phoneValidation.style.display = "block";
     phoneValidation2.style.display = "none";
     isPhoneValid = true;
-  } else { 
-    let phoneRegex =  /^(?:\+92|0)?3\d{9}$/;
+  } else {
+    let phoneRegex = /^(?:\+92|0)?3\d{9}$/;
     if (!phoneRegex.test(phone.value)) {
       phoneValidation.style.display = "none";
       phoneValidation2.style.display = "block";
       isPhoneValid = true;
-    } else { 
+    } else {
       phoneValidation.style.display = "none";
       phoneValidation2.style.display = "none";
       isPhoneValid = false;
     }
   }
 
-  if (!isNameValid && !isEmailValid && !isPhoneValid && currentStep < totalSteps) {
+  if (
+    !isNameValid &&
+    !isEmailValid &&
+    !isPhoneValid &&
+    currentStep < totalSteps
+  ) {
     currentStep++;
     showStep(currentStep);
   }
